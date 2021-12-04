@@ -5,7 +5,7 @@
 import RPi.GPIO as GPIO
 import time # for sleep functions
 
-from signal import signal, SIGINT # for Cntrl-C
+from signal import signal, SIGINT # for Ctrl-C
 from sys import exit
 from datetime import datetime
 
@@ -22,17 +22,17 @@ GREEN = 26
 GPIO.setup(GREEN, GPIO.OUT) 
 light_on = False
 
-# Define an exit handler for the program (called on Cntrl-C)
-def CntrlCHandler(signal_received, frame):
+# Define exit handler for the program (called on Ctrl-C)
+def ctrl_c_handler(signal_received, frame):
     # Handle any cleanup here
     print('SIGINT or CTRL-C detected. Exiting gracefully')
     GPIO.cleanup()
     exit(0)
 
-# setup  the Cntrl-C handler
-signal(SIGINT, CntrlCHandler)
+# setup  the Ctrl-C handler
+signal(SIGINT, ctrl_c_handler)
 
-# infinate loop for the main thread (Use Cntrl-C to exit)
+# infinite loop for the main thread (Use Cntrl-C to exit)
 while True:
   # take a reading from the switch
   input = GPIO.input(BUTTON)
@@ -49,8 +49,8 @@ while True:
       GPIO.output(GREEN, GPIO.HIGH)
       light_on = True
 
-  # update prev_input value 
+  # update prev_input value
   previous_input = input
- 
-  #slight pause to debounce
+
+  # slight pause to debounce
   time.sleep(0.05)
