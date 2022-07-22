@@ -6,7 +6,7 @@ Read the status of a momentary switch on GPIO Pin 16 (note the use of a Blue LED
 On detection of the trailing edge (as the switch is released) output "Button Released" and the Current DATETIME
 Based on a state variable turn a single Green LED on/Off as appropriate
 
-![Alt text](https://github.com/MikeCoutts/pi-light-switch/blob/main/images/IMG_20211103_225959778.jpg?raw=true "Traffic Lights")
+![Alt text](https://github.com/MikeCoutts/pi-light-switch/blob/main/images/STEM-101-BreadBoard.jpg?raw=true "Light Switch")
 
 # Simple Raspberry Pi Bread Board wiring for this project
 [Buzzer](https://www.amazon.com/dp/B07S85WRSZ?psc=1&ref=ppx_yo2_dt_b_product_details) ground on 5V GND line with +ve into GPIO 23.
